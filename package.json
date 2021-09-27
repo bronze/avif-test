@@ -1,0 +1,17 @@
+{
+  "name": "avif_test",
+  "version": "0.0.1",
+  "description": "",
+  "license": "",
+  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.5.10",
+    "vite-imagetools": "^3.6.8",
+    "yarn": "^1.22.11"
+  }
+}

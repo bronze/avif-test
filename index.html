@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Avif test</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <div>
+      <div id="test"></div>
+      <img id="test2" />
+      Photo by
+      <a
+        href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >
+        Greg Rosenke
+      </a>
+      on
+      <a
+        href="https://unsplash.com/s/photos/16x9?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+      >
+        Unsplash
+      </a>
+    </div>
+    <picture>
+      <source srcset="./img/avif.avif" type="image/avif" />
+      <source srcset="./img/avif.webp" type="image/webp" />
+      <img
+        src="./img/avif.jpg"
+        alt="AVIF example with WebP and JPEG fallback"
+      />
+    </picture>
+    <section>
+      <script>
+        window.addEventListener("DOMContentLoaded", function () {
+          const image = document.getElementById("image");
+          const format = document.getElementById("format");
+          const url = image.currentSrc.split("?");
+          const extension = url[0].split(".").pop();
+
+          format.innerHTML = extension;
+        });
+      </script>
+      <picture>
+        <source
+          srcset="
+            https://cdn.glitch.com/f4525b23-4268-473b-a57c-bdb57f3f7494%2FIMG_5666.avif?v=1599083333763
+          "
+          type="image/avif"
+        />
+        <source
+          srcset="
+            https://cdn.glitch.com/f4525b23-4268-473b-a57c-bdb57f3f7494%2FIMG_5666.webp?v=1599083327747
+          "
+          type="image/webp"
+        />
+        <img
+          id="image"
+          src="https://cdn.glitch.com/f4525b23-4268-473b-a57c-bdb57f3f7494%2FIMG_5666.jpg?v=1599084177153"
+          alt="Description of Photo"
+          width="630px"
+        />
+      </picture>
+      <h4 class="Message">
+        Your browser has loaded this image in
+        <span id="format" class="Format">...</span>
+        format
+      </h4>
+    </section>
+
+    <script src="./js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="./js/plugins.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
